@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Toaster } from "@/components/ui/toaster";
 import { ClerkProvider } from "@clerk/nextjs";
-import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,12 +26,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ClerkProvider>
-            <main className="mx-auto max-w-3xl p-6 md:p-0">
-              <Navbar />
-              {children}
-            </main>
-          </ClerkProvider>
+          <ClerkProvider>{children}</ClerkProvider>
 
           <Toaster />
         </ThemeProvider>
